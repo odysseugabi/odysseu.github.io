@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^category/(.+)/page/(.+)$ search-results.php?q=$1&page=$2
+RewriteRule ^category/(.+)$ search-results.php?q=$1
+RewriteRule ^page/(.+)$ index.php?page=$1
+RewriteRule ^video-download/(.+)/(.+).html$ view-video.php?id=$1
+RewriteRule ^music/(.+)$ music.php?id=$1
+
+Options -Indexes
+ErrorDocument 402 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
